@@ -34,7 +34,7 @@ var password = form.pass;
 
     console.log("naam hai",this.username);
     
-    this.http.get('http://localhost:3000/login/?name=' + this.username)
+    this.http.get('http://ec2-35-171-228-220.compute-1.amazonaws.com:3000/login/?name=' + this.username)
   
     .subscribe(
       
