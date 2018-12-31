@@ -20,7 +20,7 @@ getErrorMessage() {
 
 depart  = [
 
-  {value : "Software", viewValue : "Software" },
+  {value : "software", viewValue : "software" },
   {value : "Electrical", viewValue : "Electical"},
   {value : "Mechanical", viewValue : "Mechanical"},
   {value : "Civil", viewValue : "Civil"},
@@ -33,17 +33,17 @@ depart  = [
 ]
 
 
-@Input() name : any;
 @Input() fname : any;
+@Input() lname : any;
 @Input() enrollment : any;
-@Input() expiry : any;
+@Input() cgpa : any;
 @Input() batch : any;
-@Input() studentresidentialaddress : any;
+@Input() nationalidentitynumber : any;
 @Input() department: any;
 onSubmit(form: any):void{
     
     console.log(form);
-  	this.exampleService.enrollidentity(form.name,form.fname,form.enrollment,form.expiry,form.batch,form.studentresidentialaddress,form.department)
+  	this.exampleService.enrollidentity(form.fname,form.lname,form.nationalidentitynumber,form.department,form.enrollment,form.cgpa,form.batch)
   	.subscribe(data => {
                      var testResponse = data["_body"] ;
                      this.dataContainer.nativeElement.innerHTML = data["_body"];

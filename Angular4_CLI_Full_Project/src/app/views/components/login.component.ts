@@ -30,11 +30,11 @@ var password = form.pass;
 
 };
 
-  login (){
+ /* login (){
 
     console.log("naam hai",this.username);
     
-    this.http.get('http://ec2-35-171-228-220.compute-1.amazonaws.com:3000/login/?name=' + this.username)
+    this.http.get('http://ec2-18-234-198-67.compute-1.amazonaws.com:3000/login/?name=' + this.username)
   
     .subscribe(
       
@@ -72,6 +72,25 @@ let dialogRef = this.dialog.open(LoginerrorDialogComponent, {
 
     );
 
+
+  } */
+
+
+  login() {
+console.log("naam hai",this.username);
+
+if (this.username == 'Admin' && this.pass == '789')
+{
+                          console.log("successfully login");
+  //throwing the token
+                          this.auth.setUserLoggedIn(this.username);
+                          this.router.navigate(['components']); 
+                  }
+           else {
+                let dialogRef = this.dialog.open(LoginerrorDialogComponent, {
+      height: '100px',
+      width: '900px'
+    });}
 
   }
  

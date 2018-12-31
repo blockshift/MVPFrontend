@@ -45,7 +45,7 @@ try {
                    this.dataContainer4.nativeElement.innerHTML = e.toString().replace(/\,/g,"");
 
 
-                   this.dataContainer5.nativeElement.innerHTML = b.data.data[0].payload.data.actions[0].payload.action.endorsements[1].endorser.Mspid;
+           /*        this.dataContainer5.nativeElement.innerHTML = b.data.data[0].payload.data.actions[0].payload.action.endorsements[1].endorser.Mspid;
                     
 
                    var secondendorsement = b.data.data[0].payload.data.actions[0].payload.action.endorsements[1].signature.data;
@@ -55,7 +55,8 @@ try {
                     this.dataContainer7.nativeElement.innerHTML = b.data.data[0].payload.header.signature_header.creator.Mspid;
                      var f = b.data.data[0].payload.header.signature_header.nonce.data;
                     this.dataContainer8.nativeElement.innerHTML = f.toString().replace(/\,/g,"");
-                    this.dataContainer9.nativeElement.innerHTML = b.data.data[0].payload.header.channel_header.timestamp;
+                    this.dataContainer9.nativeElement.innerHTML = b.data.data[0].payload.header.channel_header.timestamp; */
+                    
                      console.log("I SEE DATA HERE: ",testRespons);
                
   	}
