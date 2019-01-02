@@ -38,7 +38,7 @@ export class TransactionComponent {
                     
                     var f = b.transactionEnvelope.payload.data.actions[0].payload.action.endorsements[0].signature.data;
                     this.dataContainer4.nativeElement.innerHTML = f.toString().replace(/\,/g,"")  ;
-                    this.dataContainer5.nativeElement.innerHTML = b.transactionEnvelope.payload.data.actions[0].payload.action.endorsements[1].endorser.Mspid ;
+       /*             this.dataContainer5.nativeElement.innerHTML = b.transactionEnvelope.payload.data.actions[0].payload.action.endorsements[1].endorser.Mspid ;
                     var m = b.transactionEnvelope.payload.data.actions[0].payload.action.endorsements[1].signature.data
                     this.dataContainer6.nativeElement.innerHTML = m.toString().replace(/\,/g,"")  ;
                     this.dataContainer7.nativeElement.innerHTML = b.transactionEnvelope.payload.header.signature_header.creator.Mspid  ;
@@ -46,7 +46,7 @@ export class TransactionComponent {
                     this.dataContainer8.nativeElement.innerHTML = e.toString().replace(/\,/g,"") ;
 
 
-                    this.dataContainer9.nativeElement.innerHTML =  b.transactionEnvelope.payload.header.channel_header.timestamp ; 
+                    this.dataContainer9.nativeElement.innerHTML =  b.transactionEnvelope.payload.header.channel_header.timestamp ;  */
                    
                      console.log("I SEE DATA HERE: ",testRespons);
  

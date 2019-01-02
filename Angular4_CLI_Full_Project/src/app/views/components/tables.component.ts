@@ -33,17 +33,18 @@ depart  = [
 ]
 
 
-@Input() fname : any;
-@Input() lname : any;
+@Input() name : any;
+@Input() fathername : any;
+@Input() rollnumber: any;
 @Input() enrollment : any;
-@Input() cgpa : any;
 @Input() batch : any;
-@Input() nationalidentitynumber : any;
-@Input() department: any;
+@Input() cgpa : any;
+@Input() dateofgraduation : any;
+
 onSubmit(form: any):void{
     
     console.log(form);
-  	this.exampleService.enrollidentity(form.fname,form.lname,form.nationalidentitynumber,form.department,form.enrollment,form.cgpa,form.batch)
+  	this.exampleService.enrollidentity(form.name,form.fathername,form.rollnumber,form.enrollment,form.batch,form.cgpa,form.dateofgraduation)
   	.subscribe(data => {
                      var testResponse = data["_body"] ;
                      this.dataContainer.nativeElement.innerHTML = data["_body"];
