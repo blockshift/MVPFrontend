@@ -21,7 +21,7 @@ enrollidentity(name,fathername,rollnumber,enrollment,batch,cgpa,dateofgraduation
      let fcn = 'initDegree';
      let peers = 'node_registrarpeerfirst';	
      let argument = [name,fathername,rollnumber,enrollment,batch,cgpa,dateofgraduation];
-     let headers = new Headers({'cache-control':'no-cache', 'Content-Type': 'application/json', 'authorization':'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE5MDYzMzY1ODUsInVzZXJuYW1lIjoiT2JhaWRraGFucmVnaXN0cmFyMSIsIm9yZ05hbWUiOiJuZWR1ZXQucmVnaXN0cmFyc2VjdGlvbiIsImlhdCI6MTU0NjMzNjU4NX0.Et7k_dkZKTERl9jG4Nq78O-OM1qeerjUtor2eJ_3wBo'});
+     let headers = new Headers({'cache-control':'no-cache', 'Content-Type': 'application/json', 'authorization':'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE5MDY2NzIxNTksInVzZXJuYW1lIjoiT2JhaWRraGFuMTIzbmVkIiwib3JnTmFtZSI6Im5lZHVldC5yZWdpc3RyYXJzZWN0aW9uIiwiaWF0IjoxNTQ2NjcyMTU5fQ.48jwKwGjTOgYyzNexaYnnz1PA35JabcSn_p-08Xjmys'});
      let options = new RequestOptions({ headers: headers });
      
      let body1 = {
@@ -32,7 +32,7 @@ enrollidentity(name,fathername,rollnumber,enrollment,batch,cgpa,dateofgraduation
      let body = JSON.stringify(body1);
      console.log('server logs',body1);
 
-     return this.http.post('http://ec2-18-234-198-67.compute-1.amazonaws.com:8080/channels/obaid/chaincodes/degreefinalchaincodeobaids', body1, options )
+     return this.http.post('http://ec2-18-234-198-67.compute-1.amazonaws.com:8080/channels/obaid/chaincodes/degreefinalchaincodeobaidsss', body1, options )
     .map((res: Response) => res)
     .catch((error:any) => Observable.throw(error.json().error || 'Server error'));
 
@@ -41,7 +41,7 @@ enrollidentity(name,fathername,rollnumber,enrollment,batch,cgpa,dateofgraduation
 
  fetchblock(blocknumber){
  console.log("server logs",blocknumber);
-let headers = new Headers({'cache-control':'no-cache', 'Content-Type': 'application/json', 'authorization':'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE5MDYzMzY1ODUsInVzZXJuYW1lIjoiT2JhaWRraGFucmVnaXN0cmFyMSIsIm9yZ05hbWUiOiJuZWR1ZXQucmVnaXN0cmFyc2VjdGlvbiIsImlhdCI6MTU0NjMzNjU4NX0.Et7k_dkZKTERl9jG4Nq78O-OM1qeerjUtor2eJ_3wBo'});
+let headers = new Headers({'cache-control':'no-cache', 'Content-Type': 'application/json', 'authorization':'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE5MDY2NzIxNTksInVzZXJuYW1lIjoiT2JhaWRraGFuMTIzbmVkIiwib3JnTmFtZSI6Im5lZHVldC5yZWdpc3RyYXJzZWN0aW9uIiwiaWF0IjoxNTQ2NjcyMTU5fQ.48jwKwGjTOgYyzNexaYnnz1PA35JabcSn_p-08Xjmys'});
        let options = new RequestOptions({ headers: headers });
         
 
@@ -56,7 +56,7 @@ let headers = new Headers({'cache-control':'no-cache', 'Content-Type': 'applicat
 fetchbytransaction(transactionid){
     
 console.log("server logs",transactionid);
-let headers = new Headers({'cache-control':'no-cache', 'Content-Type': 'application/json', 'authorization':'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE5MDYzMzY1ODUsInVzZXJuYW1lIjoiT2JhaWRraGFucmVnaXN0cmFyMSIsIm9yZ05hbWUiOiJuZWR1ZXQucmVnaXN0cmFyc2VjdGlvbiIsImlhdCI6MTU0NjMzNjU4NX0.Et7k_dkZKTERl9jG4Nq78O-OM1qeerjUtor2eJ_3wBo'});
+let headers = new Headers({'cache-control':'no-cache', 'Content-Type': 'application/json', 'authorization':'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE5MDY2NzIxNTksInVzZXJuYW1lIjoiT2JhaWRraGFuMTIzbmVkIiwib3JnTmFtZSI6Im5lZHVldC5yZWdpc3RyYXJzZWN0aW9uIiwiaWF0IjoxNTQ2NjcyMTU5fQ.48jwKwGjTOgYyzNexaYnnz1PA35JabcSn_p-08Xjmys'});
        let options = new RequestOptions({ headers: headers });
         
 
@@ -73,11 +73,11 @@ let headers = new Headers({'cache-control':'no-cache', 'Content-Type': 'applicat
 fetchbyenrollment(enrollmentid){
     
 console.log("server logs",enrollmentid);
-let headers = new Headers({'cache-control':'no-cache', 'Content-Type': 'application/json', 'authorization':'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE5MDYzMzY1ODUsInVzZXJuYW1lIjoiT2JhaWRraGFucmVnaXN0cmFyMSIsIm9yZ05hbWUiOiJuZWR1ZXQucmVnaXN0cmFyc2VjdGlvbiIsImlhdCI6MTU0NjMzNjU4NX0.Et7k_dkZKTERl9jG4Nq78O-OM1qeerjUtor2eJ_3wBo'});
+let headers = new Headers({'cache-control':'no-cache', 'Content-Type': 'application/json', 'authorization':'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE5MDY2NzIxNTksInVzZXJuYW1lIjoiT2JhaWRraGFuMTIzbmVkIiwib3JnTmFtZSI6Im5lZHVldC5yZWdpc3RyYXJzZWN0aW9uIiwiaWF0IjoxNTQ2NjcyMTU5fQ.48jwKwGjTOgYyzNexaYnnz1PA35JabcSn_p-08Xjmys'});
        let options = new RequestOptions({ headers: headers });
         
 
-     return this.http.get('http://ec2-18-234-198-67.compute-1.amazonaws.com:8080/channels/obaid/chaincodes/degreefinalchaincodeobaids/?peer=node_registrarpeerfirst&fcn=readDegree&args=%5B%22'+enrollmentid+'%22%5D', options )
+     return this.http.get('http://ec2-18-234-198-67.compute-1.amazonaws.com:8080/channels/obaid/chaincodes/degreefinalchaincodeobaidsss/?peer=node_registrarpeerfirst&fcn=readDegree&args=%5B%22'+enrollmentid+'%22%5D', options )
 
     .map((res: Response) => res)
     .catch(e => {
