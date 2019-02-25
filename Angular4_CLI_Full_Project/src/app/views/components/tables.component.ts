@@ -40,28 +40,45 @@ depart  = [
 @Input() batch : any;
 @Input() cgpa : any;
 @Input() dateofgraduation : any;
+@Input() degreeno : any;
 
-onSubmit(form: any):void{
+/* onSubmit(form: any):void{
     
     console.log(form);
-  	this.exampleService.enrollidentity(form.name,form.fathername,form.rollnumber,form.enrollment,form.batch,form.cgpa,form.dateofgraduation)
+  	this.exampleService.invokestampery(form.name,form.fathername,form.rollnumber,form.enrollment,form.batch,form.cgpa,form.dateofgraduation)
   	.subscribe(data => {
                      var testResponse = data["_body"] ;
                      this.dataContainer.nativeElement.innerHTML = data["_body"];
                      console.log(data);
                      console.log("I SEE DATA HERE: ", testResponse);
-                     
-               //      } 
-  		 
 },
                error => {
                       console.log("This is sample error");
                       this.dataContainer.nativeElement.innerHTML ='Invalid Authorization Token'; 
 
- }
-  		); 
+ }); 
 
   };
+*/
+
+issuedegree(form: any): void{
+
+console.log(form);
+this.exampleService.insertrecord(form.name,form.fathername,form.rollnumber,form.enrollment,form.batch,form.cgpa,form.dateofgraduation,form.degreeno)
+.subscribe(data => {
+                 var testResponse = data["_body"] ;
+                 this.dataContainer.nativeElement.innerHTML = data["_body"];
+                 console.log(data);
+                 console.log("I SEE DATA HERE: ", testResponse);
+
+},
+error => {
+                      console.log("This is sample error");
+                      this.dataContainer.nativeElement.innerHTML ='Invalid Authorization Token'; 
+
+ });
+
+};
 
 
-}
+};

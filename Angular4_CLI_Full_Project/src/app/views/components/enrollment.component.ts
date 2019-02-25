@@ -30,21 +30,23 @@ export class EnrollmentComponent {
   onSubmit(form: any):void{
     
 
-    this.exampleService.fetchbyenrollment(form.enrollmentid)
+    this.exampleService.getdegreebyenrollment(form.enrollmentid)
   	.subscribe(data => {
     try {
   	           console.log('Service',form.enrollmentid); 
                     var testRespons = data["_body"]; 
-                    var b = JSON.parse(testRespons)  
+                    var b = JSON.parse(testRespons);
+                    console.log("Test response",testRespons);
+                    console.log("Value of b",b[0]);  
                     console.log(b.fathername,b.rollnumber,b.cgpa,b.batch,b.dateofgraduation,b.enrolment);
 
-                    this.dataContainer.nativeElement.innerHTML =  b.name;
-                    this.dataContainer2.nativeElement.innerHTML = b.fathername;
-                    this.dataContainer3.nativeElement.innerHTML = b.rollnumber;  
-                    this.dataContainer4.nativeElement.innerHTML = b.enrolment; 
-                    this.dataContainer5.nativeElement.innerHTML = b.cgpa;
-                    this.dataContainer6.nativeElement.innerHTML = b.batch;
-                    this.dataContainer7.nativeElement.innerHTML = b.dateofgraduation;
+                    this.dataContainer.nativeElement.innerHTML =  b[0];
+                    this.dataContainer2.nativeElement.innerHTML = b[1];
+                    this.dataContainer3.nativeElement.innerHTML = b[2];  
+                    this.dataContainer4.nativeElement.innerHTML = b[3]; 
+                    this.dataContainer5.nativeElement.innerHTML = b[4];
+                    this.dataContainer6.nativeElement.innerHTML = b[5];
+                    this.dataContainer7.nativeElement.innerHTML = b[6];
                     this.dataContainer8.nativeElement.innerHTML = 'Verified By Ned Blockchain System';
   		}
 
@@ -64,6 +66,11 @@ export class EnrollmentComponent {
   	
 
   };
+
+
+
+
+  
 
 
 }

@@ -6,10 +6,10 @@
     <div class="col-md-12">
       <div class="card">
         <div class="card-header">
-          <strong>Student Identity Issuance</strong> 
+          <strong>Student Degree Issuance</strong> 
         </div>
         
-          <form class="form-horizontal"  #f="ngForm" (ngSubmit)="onSubmit(f.value)" ngNativeValidate>
+          <form class="form-horizontal"  #f="ngForm" (ngSubmit)="issuedegree(f.value)" ngNativeValidate>
             <div class="card-body">
             <div class="form-group row">
               <div class="col-md-6">
@@ -65,6 +65,12 @@
                   <input type="text"  class="form-control" id="dateofgraduation" [(ngModel)]="dateofgraduation" name="dateofgraduation" placeholder="Date of graduation" required>
                   
                 </div>
+
+                 <div class="col-md-6">
+
+                  <input type="text"  class="form-control" id="degreeno" [(ngModel)]="degreeno" name="degreeno" placeholder="Degree Number" required>
+                  
+                </div>  
                 
 
 
@@ -94,7 +100,7 @@
   <div class="row">
     <div class="col-md-12">
       
-<h3 class="col-md-12 col-form-label" >Degree ID</h3>
+<h3 class="col-md-12 col-form-label" >Ethereum Transaction Id</h3>
 <div #dataContainer></div>
 
     </div>

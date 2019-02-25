@@ -3,15 +3,15 @@
       
          <div class="card">
         <div class="card-header">
-          <strong>Search By Transaction Id</strong> 
+          <strong>Verify by stampery Id</strong> 
         </div>
         
-          <form class="form-horizontal" #f="ngForm" (ngSubmit)="onSubmit(f.value)" ngNativeValidate>
+          <form class="form-horizontal" #f="ngForm" (ngSubmit)="Onstampverify(f.value)" ngNativeValidate>
             <div class="card-body">
             <div class="form-group row">
               
               <div class="col-md-9">
-                <input type="text" class="form-control" id="transactionid" [(ngModel)]="transactionid" name="transactionid" placeholder="Search by DegreeID" required>
+                <input type="text" class="form-control" id="stamperyid" [(ngModel)]="stamperyid" name="stamperyid" placeholder="Verify by StamperyID" required>
                
               </div>
             </div>
@@ -38,7 +38,7 @@
     <div class="col-md-12">
       
 
-<strong>Endorsed By</strong><div #dataContainer3></div>
+<strong>Valid</strong><div #dataContainer3></div>
 
     </div>
 
@@ -46,7 +46,7 @@
   </div>
 
 
-  <div class="row">
+ <!-- <div class="row">
     <div class="col-md-12">
       
 
@@ -55,7 +55,7 @@
     </div>
 
 
-  </div>
+  </div> -->
 
 
 <!--

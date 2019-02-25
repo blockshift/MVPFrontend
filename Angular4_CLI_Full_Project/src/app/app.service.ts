@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Http,Headers,Response,RequestOptions } from '@angular/http';
+
 import { Observable } from 'rxjs/Rx';
 import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/catch';
@@ -16,7 +17,7 @@ export class AppService {
 
 
 
-enrollidentity(name,fathername,rollnumber,enrollment,batch,cgpa,dateofgraduation){
+enrollidentity(name,fathername,rollnumber,enrollment,batch,cgpa,dateofgraduation,degreeno){
      
      let fcn = 'initDegree';
      let peers = 'node_registrarpeerfirst';	
@@ -33,8 +34,8 @@ enrollidentity(name,fathername,rollnumber,enrollment,batch,cgpa,dateofgraduation
      console.log('server logs',body1);
 
      return this.http.post('http://ec2-18-234-198-67.compute-1.amazonaws.com:8080/channels/obaid/chaincodes/degreefinalchaincodeobaidsss', body1, options )
-    .map((res: Response) => res)
-    .catch((error:any) => Observable.throw(error.json().error || 'Server error'));
+    .map(response => { response.json() });
+  //  .catch((error:any) => Observable.throw(error.json().error || 'Server error'));
 
 };
 
@@ -88,6 +89,87 @@ let headers = new Headers({'cache-control':'no-cache', 'Content-Type': 'applicat
              console.log("It works");
             // do any other checking for statuses here
         });
+
+
+};
+
+
+invokestampery(name,fathername,rollnumber,enrollment,batch,cgpa,dateofgraduation){
+     
+   //  let argument = [name,fathername,rollnumber,enrollment,batch,cgpa,dateofgraduation];
+     let headers = new Headers({'cache-control':'no-cache', 'Content-Type': 'application/x-www-form-urlencoded'});
+   //  let options = new RequestOptions({ headers: headers });
+     
+let body = new URLSearchParams();
+body.set('studentname', name);
+body.set('fathername', fathername);
+body.set('rollnumber',rollnumber);
+body.set('enrollmentnumber',enrollment);
+body.set('batchname',batch);
+body.set('cgpa',cgpa);
+body.set('graduation',dateofgraduation);
+ //    let body1 = {
+  //           args: argument
+   //             }
+   //  let body = JSON.stringify(body1);
+   //  console.log('server logs',body1);
+ //  let options = {
+ //   headers: new HttpHeaders().set('Content-Type', 'application/x-www-form-urlencoded')
+//};
+let options = new RequestOptions({ headers: headers });
+     return this.http.post('http://ec2-35-168-114-210.compute-1.amazonaws.com:8080/postrecord', body.toString(), options)
+    .map((res: Response) => res)
+    .catch((error:any) => Observable.throw(error.json().error || 'Server error'));
+
+};
+
+
+
+verifystamp(stampid){
+     let headers = new Headers({'cache-control':'no-cache', 'Content-Type': 'application/x-www-form-urlencoded'});
+     let body = new URLSearchParams();
+     body.set('stampid',stampid);
+     let options = new RequestOptions({ headers: headers });
+     return this.http.post('http://ec2-35-168-114-210.compute-1.amazonaws.com:8080/verifystamp', body.toString(), options)
+    .map((res: Response) => res)
+    .catch((error:any) => Observable.throw(error.json().error || 'Server error'));
+
+};
+
+
+insertrecord(name,fathername,rollnumber,enrollment,batch,cgpa,dateofgraduation,degreeno){
+    let headers = new Headers({'cache-control':'no-cache', 'Content-Type': 'application/x-www-form-urlencoded'});
+    let body = new URLSearchParams();
+    body.set('studentname',name);
+    body.set('fathername',fathername);
+    body.set('rollnumber',rollnumber);
+    body.set('enrollmentnumber',enrollment);
+    body.set('batchname',batch);
+    body.set('cgpa',cgpa);
+    body.set('graduation',dateofgraduation);
+    body.set('degreeno',degreeno);
+
+    let options = new RequestOptions({ headers: headers });
+     return this.http.post('http://ec2-35-168-114-210.compute-1.amazonaws.com:3000/sendtx', body.toString(), options)
+    .map((res: Response) => res)
+    .catch((error:any) => Observable.throw(error.json().error || 'Server error'));
+
+
+
+};
+
+
+getdegreebyenrollment(enrollment){
+
+    let headers = new Headers({'cache-control':'no-cache', 'Content-Type': 'application/x-www-form-urlencoded'});
+    let body = new URLSearchParams();
+    body.set('enrollment',enrollment);
+    let options = new RequestOptions({ headers: headers });
+     return this.http.post('http://ec2-35-168-114-210.compute-1.amazonaws.com:3000/fetchrecordbyenrollment', body.toString(), options)
+    .map((res: Response) => res)
+    .catch((error:any) => Observable.throw(error.json().error || 'Server error'));
+
+
 
 
 };

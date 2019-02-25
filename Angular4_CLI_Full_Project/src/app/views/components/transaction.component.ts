@@ -22,8 +22,10 @@ export class TransactionComponent {
 
 @Input() transactionid: any;
 @Input() orgtoken: any;
+@Input() stamperyid: any;
 
-  onSubmit(form: any):void{
+
+onSubmit(form: any):void{
     console.log(form.orgtoken);
 
     this.exampleService.fetchbytransaction(form.transactionid)
@@ -69,5 +71,20 @@ catch(e) {
   	
 
   };
+
+
+
+  Onstampverify(form: any):void {
+   console.log("stampery id",form.stamperyid);
+   this.exampleService.verifystamp(form.stamperyid)
+    .subscribe(data => {
+      var testResponse = data["_body"] ;
+      this.dataContainer3.nativeElement.innerHTML = data["_body"];
+}); 
+};
+
+ 
+
+  
 
 }

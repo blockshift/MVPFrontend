@@ -1,7 +1,7 @@
 export const navigation = [
   
   {
-    name: 'Student ID Issuance',
+    name: 'Document Issuance',
     url: '/components/tables',
     icon: 'icon-star'
   },
@@ -13,7 +13,7 @@ export const navigation = [
   },
 
   {
-    name: 'Search by transaction',
+    name: 'Search by transaction id',
     url: '/components/transaction',
     icon: 'icon-star'
   },
